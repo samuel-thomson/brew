@@ -32,6 +32,16 @@ namespace Brew.Models
                 this.Extraction = "over";
             }
         }
-        
+        public void GetBody(string b)
+        {
+            if(b == "thin")
+            {
+                this.Body = "thin";
+            }
+            else if(b == "heavy") 
+            {
+                this.Body = "heavy";
+            }
+        }
     }
 }
