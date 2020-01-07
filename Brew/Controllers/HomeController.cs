@@ -22,7 +22,7 @@ namespace Brew.Controllers
         {
             return View();
         }
-        public IActionResult SetRecipe(float Dose, float Grind, string Body, string Extraction)
+        public IActionResult SetRecipe(float Grind, float Dose, string Body, string Extraction)
         {
             Recipe r = new Recipe(Dose, Grind, Body, Extraction);
             return View(StaticMethodLayer.GetNextRecipe(r));
