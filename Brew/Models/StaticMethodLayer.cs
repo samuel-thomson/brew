@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Brew.Models
 {
-    public interface StaticMethodLayer
+    public class StaticMethodLayer
     {
-        public Recipe GetNextRecipe(Recipe r)
+        public static Recipe GetNextRecipe(Recipe r)
         {
             if(r.Extraction == "over")
             {
