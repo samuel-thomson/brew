@@ -22,9 +22,11 @@ namespace Brew.Controllers
         {
             return View();
         }
-        public IActionResult SetRecipe(float Dose, float Grind)
+        public IActionResult SetRecipe(float Dose, float Grind, string Body, string Extraction)
         {
             Recipe r = new Recipe(Dose, Grind);
+            r.GetBody(Body);
+            r.GetExtraction(Extraction);
             return View(r);
         }
 
