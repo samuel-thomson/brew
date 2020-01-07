@@ -24,9 +24,9 @@ namespace Brew.Controllers
         }
         public IActionResult SetRecipe(float Dose, float Grind, string Body, string Extraction)
         {
-            Recipe r = new Recipe(Dose, Grind);
-            r.GetBody(Body);
-            r.GetExtraction(Extraction);
+            Recipe r = new Recipe(Dose, Grind, Body, Extraction);
+            //r.GetBody(Body);
+            //r.GetExtraction(Extraction);
             return View(r);
         }
 

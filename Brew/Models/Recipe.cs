@@ -7,8 +7,8 @@ namespace Brew.Models
 {
     public class Recipe
     {
-        public float Grind { get; set; }
-        public float Dose { get; set; }
+        public double Grind { get; set; }
+        public double Dose { get; set; }
         public string Body { get; set; }
         public string Extraction { get; set; }
 
@@ -16,32 +16,55 @@ namespace Brew.Models
         {
 
         }
-        public Recipe(float grind, float dose)
+        public Recipe(double grind, double dose)
         {
             this.Grind = grind;
             this.Dose = dose;
         }
-        public void GetExtraction(string s)
+        public Recipe(double grind, double dose, string body, string extraction)
         {
-            if(s == "sour")
+            this.Grind = grind;
+            this.Dose = dose;
+
+            if (body == "thin")
+            {
+                this.Body = "thin";
+            }
+            else if (body == "heavy")
+            {
+                this.Body = "heavy";
+            }
+
+            if (extraction == "sour")
             {
                 this.Extraction = "under";
             }
-            else if(s == "bitter" || s == "salty")
+            else if (extraction == "bitter" || extraction == "salty")
             {
                 this.Extraction = "over";
             }
         }
-        public void GetBody(string b)
-        {
-            if(b == "thin")
-            {
-                this.Body = "thin";
-            }
-            else if(b == "heavy") 
-            {
-                this.Body = "heavy";
-            }
-        }
+        //public void GetExtraction(string s)
+        //{
+        //    if(s == "sour")
+        //    {
+        //        this.Extraction = "under";
+        //    }
+        //    else if(s == "bitter" || s == "salty")
+        //    {
+        //        this.Extraction = "over";
+        //    }
+        //}
+        //public void GetBody(string b)
+        //{
+        //    if(b == "thin")
+        //    {
+        //        this.Body = "thin";
+        //    }
+        //    else if(b == "heavy") 
+        //    {
+        //        this.Body = "heavy";
+        //    }
+        //}
     }
 }
