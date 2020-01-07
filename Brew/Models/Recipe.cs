@@ -44,27 +44,5 @@ namespace Brew.Models
                 this.Extraction = "over";
             }
         }
-        //public void GetExtraction(string s)
-        //{
-        //    if(s == "sour")
-        //    {
-        //        this.Extraction = "under";
-        //    }
-        //    else if(s == "bitter" || s == "salty")
-        //    {
-        //        this.Extraction = "over";
-        //    }
-        //}
-        //public void GetBody(string b)
-        //{
-        //    if(b == "thin")
-        //    {
-        //        this.Body = "thin";
-        //    }
-        //    else if(b == "heavy") 
-        //    {
-        //        this.Body = "heavy";
-        //    }
-        //}
     }
 }
