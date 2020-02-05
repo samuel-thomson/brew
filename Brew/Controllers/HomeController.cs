@@ -28,7 +28,7 @@ namespace Brew.Controllers
             return View(StaticMethodLayer.GetNextRecipe(r));
         }
 
-        public IActionResult Privacy()
+        public IActionResult NewCoffee()
         {
             return View();
         }
