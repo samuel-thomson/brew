@@ -7,9 +7,8 @@ namespace Brew.Models
 {
     public class Recipe
     {
-        public string Country { get; set; }
+        public string Origin { get; set; }
         public string Roaster { get; set; }
-        public string Farm { get; set; }
         public double Grind { get; set; }
         public double Dose { get; set; }
         public string Body { get; set; }
