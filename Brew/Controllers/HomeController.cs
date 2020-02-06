@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Brew.Models;
+using Brew.Data;
 
 namespace Brew.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext db = new ApplicationDbContext();
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -38,6 +41,15 @@ namespace Brew.Controllers
             {
                 return RedirectToAction("./Identity/Account/Login");
             }
+        }
+        [HttpPost]
+        public IActionResult NewCoffee(string origin, string roaster, double dose, double grind)
+        {
+            Recipe r = new Recipe(origin, roaster, dose, grind);
+            r.UserId = User.Identity.Name;
+            db.Add(r);
+            db.SaveChanges();
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
