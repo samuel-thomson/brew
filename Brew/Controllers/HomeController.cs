@@ -30,7 +30,14 @@ namespace Brew.Controllers
 
         public IActionResult NewCoffee()
         {
-            return View();
+            if(User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("./Identity/Account/Login");
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
