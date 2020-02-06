@@ -25,6 +25,13 @@ namespace Brew.Models
             this.Grind = grind;
             this.Dose = dose;
         }
+        public Recipe(string origin, string roaster, double grind, double dose)
+        {
+            this.Grind = grind;
+            this.Dose = dose;
+            this.Origin = origin;
+            this.Roaster = roaster;
+        }
         public Recipe(double grind, double dose, string body, string extraction)
         {
             this.Grind = grind;
