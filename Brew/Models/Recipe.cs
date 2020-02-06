@@ -7,12 +7,14 @@ namespace Brew.Models
 {
     public class Recipe
     {
+        public int Id { get; set; }
         public string Origin { get; set; }
         public string Roaster { get; set; }
         public double Grind { get; set; }
         public double Dose { get; set; }
         public string Body { get; set; }
         public string Extraction { get; set; }
+        public string UserId { get; set; }
 
         public Recipe()
         {
