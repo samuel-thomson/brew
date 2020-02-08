@@ -13,13 +13,12 @@ namespace Brew.Controllers
     public class HomeController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
+        //private readonly ILogger<HomeController> _logger;
 
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
 
         public IActionResult Index()
         {
@@ -47,7 +46,7 @@ namespace Brew.Controllers
         {
             Recipe r = new Recipe(origin, roaster, dose, grind);
             r.UserId = User.Identity.Name;
-            db.Add(r);
+            db.Recipes.Add(r);
             db.SaveChanges();
             return View();
         }
