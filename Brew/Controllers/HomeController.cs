@@ -7,13 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Brew.Models;
 using Brew.Data;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace Brew.Controllers
 {
     public class HomeController : Controller
     {
-        //ApplicationDbContext db = new ApplicationDbContext();
         private readonly ApplicationDbContext db;
         public HomeController(ApplicationDbContext _db)
         {
@@ -25,10 +24,11 @@ namespace Brew.Controllers
         //{
         //    _logger = logger;
         //}
-
+        [Authorize]
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Login", "Account", "Identity");
+            //return View();
         }
         public IActionResult SetRecipe(float Grind, float Dose, string Body, string Extraction)
         {
