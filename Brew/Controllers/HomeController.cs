@@ -8,11 +8,17 @@ using Microsoft.Extensions.Logging;
 using Brew.Models;
 using Brew.Data;
 
+
 namespace Brew.Controllers
 {
     public class HomeController : Controller
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        //ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db;
+        public HomeController(ApplicationDbContext _db)
+        {
+            db = _db;
+        }
         //private readonly ILogger<HomeController> _logger;
 
         //public HomeController(ILogger<HomeController> logger)
@@ -46,7 +52,7 @@ namespace Brew.Controllers
         {
             Recipe r = new Recipe(origin, roaster, dose, grind);
             r.UserId = User.Identity.Name;
-            db.Recipes.Add(r);
+            db.Add(r);
             db.SaveChanges();
             return View();
         }
