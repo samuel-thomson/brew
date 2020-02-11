@@ -1,21 +1,97 @@
-﻿<p>Lez make some coffee!</p>
-<p>Please enter your starting recipe below and we'll work on your next one from there.</p>
-<form action="Home/SetRecipe">
-    <p>Dose: </p>
-    <input type="number" name="Dose" />
-    <br />
-    <p>Grind: </p>
-    <input type="number" name="Grind"/>
-    <br />
-    <p>Body: </p>
-    <input type="radio" name="Body" value="thin"/>Light
-    <br />
-    <input type="radio" name="Body" value="heavy" />Heavy
-    <br />
-    <p>Taste: </p>
-    <input type="radio" name="Extraction" value="bitter" />Bitter
-    <br />
-    <input type="radio" name="Extraction" value="sour" />Sour
-    <br />
-    <input type="submit" />
-</form>
+﻿
+
+<h1>Brew Logo</h1>
+
+@*<form action="Home/SetRecipe">
+        <p>Dose: </p>
+        <input type="number" name="Dose" />
+        <br />
+        <p>Grind: </p>
+        <input type="number" name="Grind"/>
+        <br />
+        <p>Body: </p>
+        <input type="radio" name="Body" value="thin"/>Light
+        <br />
+        <input type="radio" name="Body" value="heavy" />Heavy
+        <br />
+        <p>Taste: </p>
+        <input type="radio" name="Extraction" value="bitter" />Bitter
+        <br />
+        <input type="radio" name="Extraction" value="sour" />Sour
+        <br />
+        <input type="submit" />
+    </form>*@
+
+
+@model IEnumerable<Brew.Models.Recipe>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Origin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roaster)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grind)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dose)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Body)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Extraction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Origin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Roaster)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grind)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dose)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Body)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Extraction)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

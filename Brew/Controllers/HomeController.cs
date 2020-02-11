@@ -29,13 +29,13 @@ namespace Brew.Controllers
         {
             if(User.Identity.IsAuthenticated)
             {
-                return View();
+                
+                return View(db.Recipes.ToList());
             }
             else
             {
                 return RedirectToAction("Login", "Account", "Identity");
             }
-            //return View();
         }
         public IActionResult SetRecipe(float Grind, float Dose, string Body, string Extraction)
         {
