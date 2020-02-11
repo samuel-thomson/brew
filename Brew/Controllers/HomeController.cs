@@ -43,7 +43,7 @@ namespace Brew.Controllers
             return View(StaticMethodLayer.GetNextRecipe(r));
         }
 
-        public IActionResult NewCoffee()
+        public IActionResult RecipeDetails()
         {
             if(User.Identity.IsAuthenticated)
             {
