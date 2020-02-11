@@ -37,11 +37,11 @@ namespace Brew.Controllers
                 return RedirectToAction("Login", "Account", "Identity");
             }
         }
-        public IActionResult SetRecipe(float Grind, float Dose, string Body, string Extraction)
-        {
-            Recipe r = new Recipe(Dose, Grind, Body, Extraction);
-            return View(StaticMethodLayer.GetNextRecipe(r));
-        }
+        //public IActionResult SetRecipe(float Grind, float Dose, string Body, string Extraction)
+        //{
+        //    Recipe r = new Recipe(Dose, Grind, Body, Extraction);
+        //    return View(StaticMethodLayer.GetNextRecipe(r));
+        //}
 
         public IActionResult RecipeDetails(string origin, string roaster)
         {
@@ -51,7 +51,7 @@ namespace Brew.Controllers
             double grind = 6;
             double dose = 25;
             Recipe newDial = new Recipe(origin, roaster, grind, dose);
-            return View();
+            return View(newDial);
         }
         [HttpPost]
         public IActionResult NewCoffee(string origin, string roaster, double dose, double grind)
