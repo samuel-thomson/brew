@@ -1,14 +1,14 @@
-﻿
+﻿@model Brew.Models.Recipe
 <h1>NewCoffee</h1>
 
 
-@ViewBag.Origin
+@Model.Origin
 <br />
-@ViewBag.Roaster
+@Model.Roaster
 <br />
-@ViewBag.Dose
+@Model.Dose
 <br />
-@ViewBag.Grind
+@Model.Grind
 <br />
 <form asp-action="SetDial">
     tasting notes input here.
