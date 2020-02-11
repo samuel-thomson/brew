@@ -27,7 +27,14 @@ namespace Brew.Controllers
         [Authorize]
         public IActionResult Index()
         {
-            return RedirectToAction("Login", "Account", "Identity");
+            if(User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account", "Identity");
+            }
             //return View();
         }
         public IActionResult SetRecipe(float Grind, float Dose, string Body, string Extraction)
