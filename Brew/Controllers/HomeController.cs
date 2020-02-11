@@ -43,16 +43,15 @@ namespace Brew.Controllers
             return View(StaticMethodLayer.GetNextRecipe(r));
         }
 
-        public IActionResult RecipeDetails()
+        public IActionResult RecipeDetails(string origin, string roaster)
         {
-            if(User.Identity.IsAuthenticated)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("./Identity/Account/Login");
-            }
+            //search for existing recipe
+
+            //if no recipe...
+            double grind = 6;
+            double dose = 25;
+            Recipe newDial = new Recipe(origin, roaster, grind, dose);
+            return View();
         }
         [HttpPost]
         public IActionResult NewCoffee(string origin, string roaster, double dose, double grind)

@@ -32,28 +32,28 @@ namespace Brew.Models
             this.Origin = origin;
             this.Roaster = roaster;
         }
-        public Recipe(double grind, double dose, string body, string extraction)
-        {
-            this.Grind = grind;
-            this.Dose = dose;
+        //public Recipe(double grind, double dose, string body, string extraction)
+        //{
+        //    this.Grind = grind;
+        //    this.Dose = dose;
 
-            if (body == "thin")
-            {
-                this.Body = "thin";
-            }
-            else if (body == "heavy")
-            {
-                this.Body = "heavy";
-            }
+        //    if (body == "thin")
+        //    {
+        //        this.Body = "thin";
+        //    }
+        //    else if (body == "heavy")
+        //    {
+        //        this.Body = "heavy";
+        //    }
 
-            if (extraction == "sour")
-            {
-                this.Extraction = "under";
-            }
-            else if (extraction == "bitter" || extraction == "salty")
-            {
-                this.Extraction = "over";
-            }
-        }
+        //    if (extraction == "sour")
+        //    {
+        //        this.Extraction = "under";
+        //    }
+        //    else if (extraction == "bitter" || extraction == "salty")
+        //    {
+        //        this.Extraction = "over";
+        //    }
+        //}
     }
 }
