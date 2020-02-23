@@ -46,12 +46,12 @@ namespace Brew.Controllers
         public IActionResult RecipeDetails(string origin, string roaster)
         {
             //search for existing recipe
-
+            return View();
             //if no recipe...
             double grind = 6;
             double dose = 25;
             Recipe newDial = new Recipe(origin, roaster, grind, dose);
-            return View(newDial);
+            //return View(newDial);
         }
         [HttpPost]
         public IActionResult NewCoffee(string origin, string roaster, double dose, double grind)
